@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         description: "The overview of a Software Engineer", // TODO: add a better content
       }}
     >
-      main
+      homepage
     </Layout>
   );
 };
