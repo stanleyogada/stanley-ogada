@@ -27,7 +27,7 @@ type Props = {
 
 function Layout({ children, head }: Props) {
   return (
-    <Box height="100%" backgroundColor="brand.light-2">
+    <Box height="100%" backgroundColor="brand.light-2" overflowY="scroll">
       <Head>
         <title>{head.title}</title>
         <meta name="description" content={head.description} />
@@ -41,7 +41,8 @@ function Layout({ children, head }: Props) {
         height="53px"
         borderBottom="1px solid"
         borderColor="brand.dark-6"
-        // alignItems="center"
+        position="sticky"
+        top={0}
       >
         <Flex
           {...getCenterStyle}
@@ -86,6 +87,7 @@ function Layout({ children, head }: Props) {
           </Flex>
         </Flex>
       </Flex>
+
       <Box
         as="main"
         backgroundColor="brand.light"
@@ -94,6 +96,7 @@ function Layout({ children, head }: Props) {
       >
         {children}
       </Box>
+
       <Box as="footer" {...getCenterStyle}>
         footer
       </Box>

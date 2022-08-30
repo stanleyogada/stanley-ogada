@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Layout from "@components/Layout/Layout";
+import { Box } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +10,7 @@ const Home: NextPage = () => {
         description: "The overview of a Software Engineer", // TODO: add a better content
       }}
     >
-      homepage
+      <Box border={"1px solid black"} height="1000px"></Box>
     </Layout>
   );
 };
