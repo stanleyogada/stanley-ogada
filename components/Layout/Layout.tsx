@@ -15,6 +15,8 @@ import {
 import { MdSchool } from "react-icons/md";
 import { FaMicroblog } from "react-icons/fa";
 import { GrStackOverflow } from "react-icons/gr";
+import Link from "@components/Link/Link";
+import { useRouter } from "next/router";
 
 type Props = {
   children: React.ReactNode;
@@ -38,7 +40,7 @@ function Layout({ children, head }: Props) {
         as="header"
         backgroundColor="brand.light"
         marginBottom={5}
-        height="53px"
+        height="60px"
         borderBottom="1px solid"
         borderColor="brand.dark-6"
         position="sticky"
@@ -50,7 +52,7 @@ function Layout({ children, head }: Props) {
           alignItems="center"
           flex={1}
         >
-          <Flex gap={7} alignItems="center">
+          <Flex gap={10} alignItems="center">
             <Brand />
 
             <Flex alignItems={"center"} position="relative">
@@ -73,13 +75,13 @@ function Layout({ children, head }: Props) {
             alignSelf="stretch"
             color={"brand.dark-2"}
           >
-            <Flex>
+            <Flex gap={3}>
               {headerSectionIcons.map((icon) => (
                 <HeaderIcon key={icon.text} {...icon} />
               ))}
             </Flex>
 
-            <Flex borderLeft="1px solid" borderColor="brand.dark-6">
+            <Flex borderLeft="1px solid" borderColor="brand.dark-6" gap={3}>
               {headerPageIcons.map((icon) => (
                 <HeaderIcon key={icon.text} {...icon} />
               ))}
@@ -108,66 +110,86 @@ const HeaderIcon = ({
   icon,
   text,
   tooltipTitle,
+  href = "#",
 }: {
   icon: React.ReactNode;
   text: string;
   tooltipTitle?: string;
-}) => (
-  <Flex
-    flexDirection="column"
-    justifyContent={"center"}
-    alignItems="center"
-    textAlign="center"
-    paddingX={4}
-    className="header__icon"
-    cursor="pointer"
-    title={tooltipTitle || text}
-  >
-    <Box
-      sx={{
-        ".header__icon:hover &": {
-          color: "brand.primary",
-        },
-      }}
-    >
-      {icon}
-    </Box>
+  href?: string;
+}) => {
+  const router = useRouter();
+  const isActive = router.pathname === href || router.asPath.includes(href);
 
-    <Text>{text}</Text>
-  </Flex>
-);
+  return (
+    <Link
+      href={href}
+      display="flex"
+      flexDirection="column"
+      justifyContent={"center"}
+      alignItems="center"
+      textAlign="center"
+      paddingX={4}
+      className="header__icon"
+      cursor="pointer"
+      title={tooltipTitle || text}
+      _hover={{
+        textDecoration: "none",
+      }}
+      color={isActive && "brand.primary"}
+    >
+      <Box
+        sx={{
+          ".header__icon:hover &": {
+            color: "brand.primary",
+          },
+        }}
+      >
+        {icon}
+      </Box>
+
+      <Text>{text}</Text>
+    </Link>
+  );
+};
 
 const headerSectionIcons = [
   {
     text: "Overview",
     icon: <GrStackOverflow fontSize={"22px"} />,
+    href: "#overview",
   },
   {
     text: "Projects",
     icon: <AiFillProject fontSize={"22px"} />,
+    href: "#projects",
   },
   {
     text: "About",
     icon: <AiFillMessage fontSize={"22px"} />,
+    href: "#about",
   },
   {
     text: "Skills",
     icon: <AiFillExperiment fontSize={"22px"} />,
+    href: "#skills",
   },
   {
     text: "EXP",
     icon: <AiFillThunderbolt fontSize={"22px"} />,
     tooltipTitle: "Experience",
+    href: "#experience",
   },
   {
     text: "EDU",
     icon: <MdSchool fontSize={"22px"} />,
     tooltipTitle: "Education",
+    href: "#education",
   },
   {
     text: "Certs",
     icon: <AiFillSafetyCertificate fontSize={"22px"} />,
-    tooltipTitle: "License and Certifications",
+    tooltipTitle: "License and Certificates",
+    href: "#licenses-certificates",
   },
 ];
 
@@ -176,11 +198,13 @@ const headerPageIcons = [
     text: "Home",
     icon: <AiFillHome fontSize={"22px"} />,
     tooltipTitle: "Home page",
+    href: "/",
   },
   {
     text: "Blog",
     icon: <FaMicroblog fontSize={"22px"} />,
     tooltipTitle: "Blog page",
+    href: "/blog",
   },
 ];
 
