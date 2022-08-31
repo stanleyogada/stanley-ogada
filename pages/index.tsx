@@ -186,8 +186,8 @@ const Home: NextPage = () => {
                   <Text bg="brand.primary-2" ml={2}>
                     ReactEngineer,
                   </Text>
-                  <Text bg="brand.primary-2">TypescriptDeveloper,</Text>
-                  <Text bg="brand.primary-2">UnitTester</Text>
+                  <Text bg="brand.primary-2">WebDeveloper,</Text>
+                  <Text bg="brand.primary-2">LetsConnect</Text>
                 </Flex>
 
                 <Flex alignItems={"center"}>
