@@ -3,8 +3,11 @@ import Head from "next/head";
 import {
   Box,
   Flex,
+  Heading,
+  HStack,
   IconButton,
   Input,
+  Stack,
   StyleProps,
   Text,
 } from "@chakra-ui/react";
@@ -74,9 +77,14 @@ function Layout({ children, head }: Props) {
           flex={1}
         >
           <Flex gap={10} alignItems="center">
-            <Brand />
+            <HStack alignItems={"flex-end"}>
+              <Brand />
+              <Heading size="md" color="brand.primary">
+                RichCode Connection
+              </Heading>
+            </HStack>
 
-            <Flex alignItems={"center"} position="relative">
+            {/* <Flex alignItems={"center"} position="relative">
               <Box
                 position={"absolute"}
                 top={"50%"}
@@ -88,7 +96,7 @@ function Layout({ children, head }: Props) {
               </Box>
 
               <Input paddingLeft={10} placeholder="Search" />
-            </Flex>
+            </Flex> */}
           </Flex>
 
           <Flex
@@ -121,9 +129,24 @@ function Layout({ children, head }: Props) {
         {children}
       </Box>
 
-      <Box as="footer" {...getCenterStyle}>
-        footer
-      </Box>
+      <Stack as="footer" pt={16} pb={10} {...getCenterStyle}>
+        <HStack alignItems={"flex-end"} mb={7}>
+          <Brand />
+          <Heading size="md" color="brand.primary">
+            RichCode Connection
+          </Heading>
+        </HStack>
+
+        <Text>
+          Made with 💖 By{" "}
+          <Text as="span" bg="brand.primary-2">
+            Stanley (Chinedu) Ogada
+          </Text>
+        </Text>
+        <Text fontSize="sm" fontWeight={500}>
+          RichCode Connection &copy; {new Date().getFullYear()}
+        </Text>
+      </Stack>
 
       <IconButton
         aria-label="go to top section"
