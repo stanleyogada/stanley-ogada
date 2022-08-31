@@ -1,6 +1,11 @@
 import type { NextPage } from "next";
 import Layout from "@components/Layout/Layout";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, IconButton, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { AiOutlineUp } from "react-icons/ai";
+import Link from "@components/Link/Link";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +28,17 @@ const Home: NextPage = () => {
       <Section id="education" heading="Education" />
 
       <Section id="licenses-certificates" heading="Licenses and Certificates" />
+
+      <Link href="#overview" position="fixed" bottom={10} right={10}>
+        <IconButton
+          aria-label="go to top"
+          bg="brand.primary"
+          color="brand.light"
+          isRound
+        >
+          <AiOutlineUp />
+        </IconButton>
+      </Link>
     </Layout>
   );
 };
@@ -32,8 +48,23 @@ type SectionProps = {
   heading: string;
 };
 const Section = ({ id, heading }: SectionProps) => {
+  const router = useRouter();
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    console.log(id, inView);
+
+    if (inView) {
+      router.push(`#${id}`);
+    }
+  }, [inView]);
+
   return (
-    <Box id={id} pt={16}>
+    <Box id={id} pt={16} ref={ref}>
       <Box
         as="section"
         border={"1px solid black"}
