@@ -1,6 +1,7 @@
 const colors = {
   brand: {
     primary: "#0b66c2",
+    "primary-2": "#e5f2ff;",
     secondary: "orange",
     success: "green",
     warning: "yellow",
