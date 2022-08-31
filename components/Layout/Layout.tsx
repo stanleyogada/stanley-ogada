@@ -90,12 +90,7 @@ function Layout({ children, head }: Props) {
         </Flex>
       </Flex>
 
-      <Box
-        as="main"
-        backgroundColor="brand.light"
-        marginBottom={5}
-        {...getCenterStyle}
-      >
+      <Box as="main" marginBottom={5} {...getCenterStyle}>
         {children}
       </Box>
 
