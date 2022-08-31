@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Head from "next/head";
 import {
   Box,
@@ -25,6 +25,7 @@ import { GrStackOverflow } from "react-icons/gr";
 import Link from "@components/Link/Link";
 import { useRouter } from "next/router";
 import { HiOutlineChevronUp } from "react-icons/hi";
+import { HomeContext } from "pages";
 
 type Props = {
   children: React.ReactNode;
@@ -143,12 +144,16 @@ const HeaderIcon = ({
   tooltipTitle?: string;
   href?: string;
 }) => {
+  // @ts-ignore
+  const { currentSection, setCurrentSection } = useContext(HomeContext);
+
   const router = useRouter();
-  const isActive = router.pathname === href || router.asPath.includes(href);
+  let isActive = router.pathname === href || href.includes(currentSection);
 
   return (
     <Link
       href={href}
+      onClick={() => setCurrentSection(href.replace("#", ""))}
       display="flex"
       flexDirection="column"
       justifyContent={"center"}

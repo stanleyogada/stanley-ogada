@@ -3,30 +3,40 @@ import Layout from "@components/Layout/Layout";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+
+// @ts-ignore
+export const HomeContext = createContext();
 
 const Home: NextPage = () => {
+  const [currentSection, setCurrentSection] = useState<string>("");
+
   return (
-    <Layout
-      head={{
-        title: "Stanley Ogada",
-        description: "The overview of a Software Engineer", // TODO: add a better content
-      }}
-    >
-      <Section id="overview" heading="Overview" />
+    <HomeContext.Provider value={{ currentSection, setCurrentSection }}>
+      <Layout
+        head={{
+          title: "Stanley Ogada",
+          description: "The overview of a Software Engineer", // TODO: add a better content
+        }}
+      >
+        <Section id="overview" heading="Overview" />
 
-      <Section id="projects" heading="Projects" />
+        <Section id="projects" heading="Projects" />
 
-      <Section id="about" heading="About" />
+        <Section id="about" heading="About" />
 
-      <Section id="skills" heading="Skills" />
+        <Section id="skills" heading="Skills" />
 
-      <Section id="experience" heading="Experience" />
+        <Section id="experience" heading="Experience" />
 
-      <Section id="education" heading="Education" />
+        <Section id="education" heading="Education" />
 
-      <Section id="licenses-certificates" heading="Licenses and Certificates" />
-    </Layout>
+        <Section
+          id="licenses-certificates"
+          heading="Licenses and Certificates"
+        />
+      </Layout>
+    </HomeContext.Provider>
   );
 };
 
@@ -35,14 +45,17 @@ type SectionProps = {
   heading: string;
 };
 const Section = ({ id, heading }: SectionProps) => {
-  const router = useRouter();
+  // @ts-ignore
+  const { setCurrentSection } = useContext(HomeContext);
 
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 1,
   });
 
   useEffect(() => {
-    if (inView) router.push(`#${id}`);
+    if (inView) {
+      setCurrentSection(id);
+    }
   }, [inView]);
 
   return (
