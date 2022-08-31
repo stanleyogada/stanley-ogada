@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from "next/head";
-import { Box, Flex, Input, StyleProps, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  IconButton,
+  Input,
+  StyleProps,
+  Text,
+} from "@chakra-ui/react";
 import breakpoints from "@chakra-theme/breakpoints";
 import Brand from "@components/Brand/Brand";
 import {
@@ -17,6 +24,7 @@ import { FaMicroblog } from "react-icons/fa";
 import { GrStackOverflow } from "react-icons/gr";
 import Link from "@components/Link/Link";
 import { useRouter } from "next/router";
+import { HiOutlineChevronUp } from "react-icons/hi";
 
 type Props = {
   children: React.ReactNode;
@@ -28,8 +36,18 @@ type Props = {
 };
 
 function Layout({ children, head }: Props) {
+  const layoutRef = useRef();
+  // @ts-ignore
+  const handleGotoSection = () => layoutRef.current.scroll(0, 0);
+
   return (
-    <Box height="100%" backgroundColor="brand.light-2" overflowY="scroll">
+    <Box
+      // @ts-ignore
+      ref={layoutRef}
+      height="100%"
+      backgroundColor="brand.light-2"
+      overflowY="scroll"
+    >
       <Head>
         <title>{head.title}</title>
         <meta name="description" content={head.description} />
@@ -97,6 +115,19 @@ function Layout({ children, head }: Props) {
       <Box as="footer" {...getCenterStyle}>
         footer
       </Box>
+
+      <IconButton
+        aria-label="go to top section"
+        bg="brand.primary"
+        color="brand.light"
+        isRound
+        position="fixed"
+        bottom={10}
+        right={10}
+        onClick={handleGotoSection}
+      >
+        <HiOutlineChevronUp />
+      </IconButton>
     </Box>
   );
 }

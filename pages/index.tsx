@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
 import Layout from "@components/Layout/Layout";
-import { Box, Heading, IconButton, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useRef, useState } from "react";
-import { HiOutlineChevronDoubleUp, HiOutlineChevronUp } from "react-icons/hi";
-import Link from "@components/Link/Link";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
   return (
@@ -28,17 +26,6 @@ const Home: NextPage = () => {
       <Section id="education" heading="Education" />
 
       <Section id="licenses-certificates" heading="Licenses and Certificates" />
-
-      <Link href="#overview" position="fixed" bottom={10} right={9}>
-        <IconButton
-          aria-label="go to previous section"
-          bg="brand.primary"
-          color="brand.light"
-          isRound
-        >
-          <HiOutlineChevronUp />
-        </IconButton>
-      </Link>
     </Layout>
   );
 };
