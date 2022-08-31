@@ -208,46 +208,22 @@ const Home: NextPage = () => {
         </Section>
 
         <Section id="projects" heading="Projects">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            consectetur labore debitis corporis, voluptates odio quis! Ex
-            aliquam, aliquid quos et doloremque eligendi! Sequi accusantium ex
-            in labore voluptatem necessitatibus quam dolores quibusdam aliquam
-            eveniet quo placeat quia dolorem neque nihil earum quis nostrum
-            atque dignissimos reprehenderit, explicabo ipsum aut repellat
-            laudantium. Reprehenderit nesciunt, natus non ea est numquam aut
-            assumenda neque dolorem ducimus minima eligendi voluptatem quo amet
-            repudiandae ipsum eaque doloribus vero quisquam sed quae vel soluta
-            quaerat? Nisi optio deserunt saepe libero aspernatur laudantium
-            nostrum similique expedita, voluptatibus ex eligendi aliquid, quis
-            laboriosam vero. Quos officia repudiandae quibusdam necessitatibus
-            autem deleniti fugiat illum voluptatibus exercitationem quo eaque
-            quam, at maiores sit recusandae dignissimos. Voluptates, nam alias.
-            Assumenda ipsa neque sequi sunt fugit officiis voluptatibus commodi
-            maiores excepturi tenetur aspernatur placeat autem fugiat molestiae
-            maxime iste inventore vitae necessitatibus deserunt.
-          </Text>
+          <Section>sdsdfdsfsd</Section>
         </Section>
 
         <Section id="about" heading="About">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            consectetur labore debitis corporis, voluptates odio quis! Ex
-            aliquam, aliquid quos et doloremque eligendi! Sequi accusantium ex
-            in labore voluptatem necessitatibus quam dolores quibusdam aliquam
-            eveniet quo placeat quia dolorem neque nihil earum quis nostrum
-            atque dignissimos reprehenderit, explicabo ipsum aut repellat
-            laudantium. Reprehenderit nesciunt, natus non ea est numquam aut
-            assumenda neque dolorem ducimus minima eligendi voluptatem quo amet
-            repudiandae ipsum eaque doloribus vero quisquam sed quae vel soluta
-            quaerat? Nisi optio deserunt saepe libero aspernatur laudantium
-            nostrum similique expedita, voluptatibus ex eligendi aliquid, quis
-            laboriosam vero. Quos officia repudiandae quibusdam necessitatibus
-            autem deleniti fugiat illum voluptatibus exercitationem quo eaque
-            quam, at maiores sit recusandae dignissimos. Voluptates, nam alias.
-            Assumenda ipsa neque sequi sunt fugit officiis voluptatibus commodi
-            maiores excepturi tenetur aspernatur placeat autem fugiat molestiae
-            maxime iste inventore vitae necessitatibus deserunt.
+          <Text fontSize={"lg"}>
+            Senior Front-end Engineer with over 5 years of experience building
+            React-based front-end web apps. I have a BSc degree in computer
+            science, thus I have a solid foundation in the field. In addition, I
+            am a huge believer of agile methodologies and in using TDD to write
+            unit/integration tests to push features fast without damaging old
+            ones.
+          </Text>
+
+          <Text mt={5} fontSize="xl">
+            I am looking forward to working in a remote, competitive, and
+            demanding atmosphere at this stage in my career.
           </Text>
         </Section>
 
@@ -344,7 +320,7 @@ const Home: NextPage = () => {
 };
 
 type SectionProps = {
-  id: string;
+  id?: string;
   heading?: string;
   bottomButton?: string;
   children: ReactNode;
