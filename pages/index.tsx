@@ -6,6 +6,7 @@ import {
   Box,
   Button,
   Flex,
+  Grid,
   Heading,
   HStack,
   Stack,
@@ -208,7 +209,81 @@ const Home: NextPage = () => {
         </Section>
 
         <Section id="projects" heading="Projects">
-          <Section>sdsdfdsfsd</Section>
+          <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+            <Box
+              p={8}
+              border="1px solid"
+              borderColor="brand.dark-6"
+              overflow="hidden"
+              rounded="lg"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              maiores tempore optio tempora dicta a nisi labore amet suscipit
+              facilis dolor fuga nemo ducimus eaque ratione iusto, vitae quod
+              consequatur.
+            </Box>
+          </Grid>
         </Section>
 
         <Section id="about" heading="About">
