@@ -3,8 +3,8 @@ import Layout from "@components/Layout/Layout";
 import { Box, Heading, IconButton, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { AiOutlineUp } from "react-icons/ai";
+import { useEffect, useRef, useState } from "react";
+import { HiOutlineChevronDoubleUp, HiOutlineChevronUp } from "react-icons/hi";
 import Link from "@components/Link/Link";
 
 const Home: NextPage = () => {
@@ -29,14 +29,14 @@ const Home: NextPage = () => {
 
       <Section id="licenses-certificates" heading="Licenses and Certificates" />
 
-      <Link href="#overview" position="fixed" bottom={10} right={10}>
+      <Link href="#overview" position="fixed" bottom={10} right={9}>
         <IconButton
-          aria-label="go to top"
+          aria-label="go to previous section"
           bg="brand.primary"
           color="brand.light"
           isRound
         >
-          <AiOutlineUp />
+          <HiOutlineChevronUp />
         </IconButton>
       </Link>
     </Layout>
@@ -51,16 +51,11 @@ const Section = ({ id, heading }: SectionProps) => {
   const router = useRouter();
 
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     threshold: 1,
   });
 
   useEffect(() => {
-    console.log(id, inView);
-
-    if (inView) {
-      router.push(`#${id}`);
-    }
+    if (inView) router.push(`#${id}`);
   }, [inView]);
 
   return (
