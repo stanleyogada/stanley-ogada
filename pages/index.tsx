@@ -12,7 +12,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { createContext, useState } from "react";
-import Image from "next/image";
 import { ImLocation } from "react-icons/im";
 import { FaHashtag } from "react-icons/fa";
 import Link from "@components/Link/Link";
@@ -27,6 +26,7 @@ import {
 import Section from "@components/Section/Section";
 import ProjectCard from "@components/Cards/ProjectCard/ProjectCard";
 import type { ProjectCardProps } from "@components/Cards/ProjectCard/ProjectCard";
+import Image from "@components/Image";
 
 // @ts-ignore
 export const HomeContext = createContext();
@@ -72,44 +72,26 @@ const OverviewSection = ({
 }) => (
   <Section id="overview" pt={0} px={0}>
     <Box position={"relative"}>
-      <Box width="100%" height="350px" overflow="hidden" position="relative">
-        <Box pos={"absolute"} width="100%" height="100%" zIndex={1}></Box>
+      <Image
+        src="/images/setup.jpeg"
+        alt="overview banner"
+        width="100%"
+        height="350px"
+      />
 
-        <Image
-          src="/images/setup.jpeg"
-          alt="overview banner"
-          width="100%"
-          height="100%"
-          objectFit="cover"
-          objectPosition={"center"}
-          layout="fill"
-          style={{
-            position: "absolute",
-          }}
-        />
-      </Box>
-
-      <Box
-        boxSize="250px"
-        overflow="hidden"
+      <Image
+        src="/images/profile.JPG"
+        alt="Stanley Chinedu Ogada"
+        width="250px"
+        height="250px"
+        //
         position="absolute"
         bottom={-10}
         right={8}
         rounded="full"
         border="10px solid"
         borderColor="brand.light"
-      >
-        <Image
-          src="/images/profile.JPG"
-          alt="overview banner"
-          width="100%"
-          height="100%"
-          objectFit="cover"
-          objectPosition={"center"}
-          layout="fill"
-          style={{ position: "absolute", zIndex: 1 }}
-        />
-      </Box>
+      />
     </Box>
 
     <Flex px={8} pt={10} mt={5} justifyContent="space-between">
