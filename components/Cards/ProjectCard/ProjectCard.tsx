@@ -11,7 +11,7 @@ const ProjectCard = ({ title, description, imageSrc }: ProjectCardProps) => {
   return (
     <div>
       <Image src="/images/profile.JPG" width={50} height={50} alt={title} />
-      <p>{title}</p>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   );
