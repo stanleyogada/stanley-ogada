@@ -26,6 +26,7 @@ import {
 } from "react-icons/bs";
 import Section from "@components/Section/Section";
 import ProjectCard from "@components/Cards/ProjectCard/ProjectCard";
+import type { ProjectCardProps } from "@components/Cards/ProjectCard/ProjectCard";
 
 // @ts-ignore
 export const HomeContext = createContext();
@@ -211,12 +212,7 @@ const ProjectsSection = () => (
   <Section id="projects" heading="Projects">
     <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
       {projectsData.map((product, idx) => (
-        <ProjectCard
-          key={idx}
-          title={product.title}
-          description={product.description}
-          imageSrc={product.imageSrc}
-        />
+        <ProjectCard key={idx} {...product} />
       ))}
     </Grid>
   </Section>
@@ -326,12 +322,14 @@ const LicensesCertificatesSection = () => (
   </Section>
 );
 
-const projectsData = [
+const projectsData: ProjectCardProps[] = [
   {
     title: "new project",
     description:
       "A new project is a project that is a part of a project group.",
     imageSrc: "/images/profile.JPG",
+    githubLink: "https://github.com",
+    websiteLink: "https://dev.com",
   },
   {
     title: "new project",
