@@ -6,8 +6,8 @@ import {
   Text,
   VisuallyHidden,
 } from "@chakra-ui/react";
+import Image from "@components/Image";
 import Link from "@components/Link/Link";
-import Image from "next/image";
 import React from "react";
 import { BsGithub, BsLink } from "react-icons/bs";
 
@@ -35,17 +35,22 @@ const ProjectCard = ({
       borderColor="brand.dark-6"
       overflow={"hidden"}
       rounded="md"
+      bg="brand.light-3"
     >
-      <Text>Project</Text>
+      <Text p={3} fontSize="sm" fontWeight={500}>
+        Project
+      </Text>
 
-      <Image src={imageSrc} width="100%" height={50} alt={title} />
+      <Image src={imageSrc} alt={title} width="100%" height="150px" />
       <Box p={3}>
         <Heading as="h3" size="md">
           {title}
         </Heading>
-        <Text my={5}>{description}</Text>
+        <Text fontSize="md" my={3}>
+          {description}
+        </Text>
 
-        <HStack alignItems={"center"}>
+        <HStack justifyContent="flex-end">
           {githubLink && (
             <Link
               href={githubLink}
@@ -54,7 +59,7 @@ const ProjectCard = ({
               }}
               title="Github Repository"
             >
-              <BsGithub fontSize={"22px"} />
+              <BsGithub fontSize={"25px"} />
             </Link>
           )}
           {websiteLink && (
@@ -64,7 +69,7 @@ const ProjectCard = ({
               transform="rotate(-45deg)"
               title="Live Link"
             >
-              <BsLink fontSize={"30px"} />
+              <BsLink fontSize={"35px"} />
             </Link>
           )}
         </HStack>

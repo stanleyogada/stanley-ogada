@@ -5,8 +5,8 @@ import React from "react";
 type Props = {
   src: string;
   alt: string;
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
   quality?: number;
   objectFit?: string;
   objectPosition?: string;

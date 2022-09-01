@@ -8,6 +8,7 @@ const colors = {
     danger: "red",
     light: "#fff",
     "light-2": "#f3f2ef",
+    "light-3": "##f9f9f9",
     dark: "#222",
     "dark-2": "#444",
     "dark-3": "#666",
