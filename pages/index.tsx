@@ -25,6 +25,7 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import Section from "@components/Section/Section";
+import ProjectCard from "@components/Cards/ProjectCard/ProjectCard";
 
 // @ts-ignore
 export const HomeContext = createContext();
@@ -53,6 +54,7 @@ const Home: NextPage = () => {
       >
         <OverviewSection onDownloadResumeClick={handleDownloadResume} />
         <AboutSection />
+        <ProjectsSection />
         <SkillsSection />
         <ExperienceSection />
         <EducationSection />
@@ -208,73 +210,14 @@ const OverviewSection = ({
 const ProjectsSection = () => (
   <Section id="projects" heading="Projects">
     <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
-
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
-      <Box
-        p={8}
-        border="1px solid"
-        borderColor="brand.dark-6"
-        overflow="hidden"
-        rounded="lg"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores
-        tempore optio tempora dicta a nisi labore amet suscipit facilis dolor
-        fuga nemo ducimus eaque ratione iusto, vitae quod consequatur.
-      </Box>
+      {projectsData.map((product, idx) => (
+        <ProjectCard
+          key={idx}
+          title={product.title}
+          description={product.description}
+          imageSrc={product.imageSrc}
+        />
+      ))}
     </Grid>
   </Section>
 );
@@ -382,5 +325,62 @@ const LicensesCertificatesSection = () => (
     </Text>
   </Section>
 );
+
+const projectsData = [
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+  {
+    title: "new project",
+    description:
+      "A new project is a project that is a part of a project group.",
+    imageSrc: "/images/profile.JPG",
+  },
+];
 
 export default Home;
