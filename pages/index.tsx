@@ -194,7 +194,8 @@ const ProjectsSection = () => (
   <Section id="projects" heading="Projects">
     <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
       {projectsData.map((product, idx) => (
-        <ProjectCard key={idx} {...product} />
+        // @ts-ignore
+        <ProjectCard w="auto" key={idx} {...product} />
       ))}
     </Grid>
   </Section>

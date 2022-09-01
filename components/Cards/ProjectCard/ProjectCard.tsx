@@ -20,6 +20,7 @@ export interface ProjectCardProps extends ProjectCardOptionsProps {
   title: string;
   description: string;
   imageSrc: string;
+  w: string;
 }
 
 const ProjectCard = ({
@@ -28,6 +29,7 @@ const ProjectCard = ({
   imageSrc,
   githubLink,
   websiteLink,
+  w = "300px",
 }: ProjectCardProps) => {
   return (
     <Box
@@ -36,6 +38,7 @@ const ProjectCard = ({
       overflow={"hidden"}
       rounded="md"
       bg="brand.light-3"
+      width={w}
     >
       <Text p={3} fontSize="sm" fontWeight={500}>
         Project
