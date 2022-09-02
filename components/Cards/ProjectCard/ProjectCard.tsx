@@ -20,7 +20,7 @@ export interface ProjectCardProps extends ProjectCardOptionsProps {
   title: string;
   description: string;
   imageSrc: string;
-  w: string;
+  w?: string;
 }
 
 const ProjectCard = ({
