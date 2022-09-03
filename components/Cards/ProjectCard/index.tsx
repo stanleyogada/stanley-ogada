@@ -7,7 +7,7 @@ import {
   VisuallyHidden,
 } from "@chakra-ui/react";
 import Image from "@components/Image";
-import Link from "@components/Link/Link";
+import Link from "@components/Link";
 import React from "react";
 import { BsGithub, BsLink } from "react-icons/bs";
 

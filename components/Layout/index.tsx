@@ -6,27 +6,23 @@ import {
   Heading,
   HStack,
   IconButton,
-  Input,
   Stack,
   StyleProps,
   Text,
 } from "@chakra-ui/react";
 import breakpoints from "@chakra-theme/breakpoints";
-import Brand from "@components/Brand/Brand";
+import Brand from "@components/Brand";
 import {
-  AiFillExperiment,
   AiFillHome,
   AiFillMessage,
   AiFillProject,
-  AiFillSafetyCertificate,
-  AiOutlineSearch,
   AiFillThunderbolt,
   AiTwotoneExperiment,
 } from "react-icons/ai";
 import { MdSchool } from "react-icons/md";
 import { FaMicroblog } from "react-icons/fa";
 import { GrStackOverflow } from "react-icons/gr";
-import Link from "@components/Link/Link";
+import Link from "@components/Link";
 import { useRouter } from "next/router";
 import { HiOutlineChevronUp, HiBadgeCheck } from "react-icons/hi";
 import { HomeContext } from "pages";

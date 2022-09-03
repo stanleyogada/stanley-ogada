@@ -1,5 +1,5 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import ProjectCard, { ProjectCardOptionsProps } from "./ProjectCard";
+import ProjectCard, { ProjectCardOptionsProps } from ".";
 
 const setup = (props?: ProjectCardOptionsProps) => {
   const _props = {

@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Layout from "@components/Layout/Layout";
+import Layout from "@components/Layout";
 import {
   Box,
   Button,
@@ -14,7 +14,7 @@ import {
 import { createContext, useState } from "react";
 import { ImLocation } from "react-icons/im";
 import { FaHashtag } from "react-icons/fa";
-import Link from "@components/Link/Link";
+import Link from "@components/Link";
 import { AiTwotoneMail } from "react-icons/ai";
 import {
   BsDownload,
@@ -23,9 +23,9 @@ import {
   BsLinkedin,
   BsYoutube,
 } from "react-icons/bs";
-import Section from "@components/Section/Section";
-import ProjectCard from "@components/Cards/ProjectCard/ProjectCard";
-import type { ProjectCardProps } from "@components/Cards/ProjectCard/ProjectCard";
+import Section from "@components/Section";
+import ProjectCard from "@components/Cards/ProjectCard";
+import type { ProjectCardProps } from "@components/Cards/ProjectCard";
 import Image from "@components/Image";
 
 // @ts-ignore
