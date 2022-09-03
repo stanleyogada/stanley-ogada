@@ -195,11 +195,11 @@ const OverviewSection = ({
 );
 const ProjectsSection = () => (
   <Section id="projects" heading="Projects">
-    <Slider slidesToShow={3}>
+    {/* <Slider slidesToShow={3}>
       {projectsData.map((product, idx) => (
         <ProjectCard w="330px" mx={2} key={idx} {...product} />
       ))}
-    </Slider>
+    </Slider> */}
 
     <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
       {projectsData.map((product, idx) => (

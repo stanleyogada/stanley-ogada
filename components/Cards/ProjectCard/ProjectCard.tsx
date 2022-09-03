@@ -43,17 +43,9 @@ const ProjectCard = ({
       width={w}
       {...rest}
     >
-      <Text p={3} fontSize="sm" fontWeight={500}>
-        Project
-      </Text>
-
-      <Image src={imageSrc} alt={title} width="100%" height="150px" />
-      <Box p={3}>
-        <Heading as="h3" size="md">
-          {title}
-        </Heading>
-        <Text fontSize="md" my={3}>
-          {description}
+      <HStack p={3} justifyContent={"space-between"}>
+        <Text fontSize="sm" fontWeight={500}>
+          Project
         </Text>
 
         <HStack justifyContent="flex-end">
@@ -65,7 +57,7 @@ const ProjectCard = ({
               }}
               title="Github Repository"
             >
-              <BsGithub fontSize={"25px"} />
+              <BsGithub fontSize={"20px"} />
             </Link>
           )}
           {websiteLink && (
@@ -75,10 +67,20 @@ const ProjectCard = ({
               transform="rotate(-45deg)"
               title="Live Link"
             >
-              <BsLink fontSize={"35px"} />
+              <BsLink fontSize={"25px"} />
             </Link>
           )}
         </HStack>
+      </HStack>
+
+      <Image src={imageSrc} alt={title} width="100%" height="150px" />
+      <Box p={3}>
+        <Heading as="h3" size="md">
+          {title}
+        </Heading>
+        <Text fontSize="md" my={3}>
+          {description}
+        </Text>
       </Box>
     </Box>
   );
