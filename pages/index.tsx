@@ -95,6 +95,7 @@ const OverviewSection = ({
         rounded="full"
         border="10px solid"
         borderColor="brand.light"
+        zIndex={1}
       />
     </Box>
 
