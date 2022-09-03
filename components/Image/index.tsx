@@ -25,7 +25,7 @@ const Image = ({
 }: Props) => {
   return (
     <Box
-      data-testId={`image: <src=${src}>, <alt=${alt}>`}
+      data-testid={`image: <src=${src}>, <alt=${alt}>`}
       width={width}
       height={height}
       overflow="hidden"

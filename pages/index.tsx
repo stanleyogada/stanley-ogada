@@ -7,8 +7,11 @@ import {
   Grid,
   Heading,
   HStack,
+  ListItem,
   Stack,
+  StackDivider,
   Text,
+  UnorderedList,
   useToast,
 } from "@chakra-ui/react";
 import { createContext, useState } from "react";
@@ -16,6 +19,7 @@ import { ImLocation } from "react-icons/im";
 import { FaHashtag } from "react-icons/fa";
 import Link from "@components/Link";
 import { AiTwotoneMail } from "react-icons/ai";
+import { VscDebugStackframeDot } from "react-icons/vsc";
 import {
   BsDownload,
   BsFillTelephoneFill,
@@ -59,11 +63,11 @@ const Home: NextPage = () => {
       >
         <OverviewSection onDownloadResumeClick={handleDownloadResume} />
         <AboutSection />
-        <ProjectsSection />
         <SkillsSection />
         <ExperienceSection />
         <EducationSection />
         <LicensesCertificatesSection />
+        <ProjectsSection />
       </Layout>
     </HomeContext.Provider>
   );
@@ -167,14 +171,11 @@ const OverviewSection = ({
             </Text>
           </Flex>
 
-          <Flex alignItems={"center"} gap={1}>
-            <FaHashtag fontSize={"22px"} />
-
-            <Text bg="brand.primary-2" ml={2}>
-              ReactEngineer,
-            </Text>
-            <Text bg="brand.primary-2">WebDeveloper,</Text>
-            <Text bg="brand.primary-2">LetsConnect</Text>
+          <Flex alignItems={"center"}>
+            <BsLinkedin fontSize={"22px"} />
+            <Link href="#" ml={2}>
+              linkedin.com/in/stanley-ogada/
+            </Link>
           </Flex>
 
           <Flex alignItems={"center"}>
@@ -184,11 +185,14 @@ const OverviewSection = ({
             </Link>
           </Flex>
 
-          <Flex alignItems={"center"}>
-            <BsLinkedin fontSize={"22px"} />
-            <Link href="#" ml={2}>
-              linkedin.com/in/stanley-ogada/
-            </Link>
+          <Flex alignItems={"center"} gap={1}>
+            <FaHashtag fontSize={"22px"} />
+
+            <Text bg="brand.primary-2" ml={2}>
+              ReactEngineer,
+            </Text>
+            <Text bg="brand.primary-2">WebDeveloper,</Text>
+            <Text bg="brand.primary-2">LetsConnect</Text>
           </Flex>
         </Stack>
       </Box>
@@ -266,19 +270,134 @@ const SkillsSection = () => (
 );
 const ExperienceSection = () => (
   <Section id="experience" heading="Experience">
-    <ListCard
-      title="Github Copilot"
-      image={{
-        src: "/images/profile.JPG",
-        alt: "Github",
-        dimension: "50px",
-      }}
-    >
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, est
-      illo, corrupti pariatur1 quisquam tenetur culpa temporibus odio vel
-      adipisci eveniet consectetur. Eaque animi iusto laudantium aspernatur
-      reprehenderit, excepturi qui.
-    </ListCard>
+    <Stack divider={<StackDivider borderColor="brand.dark-6" />}>
+      {[1, 2, 3].map((_, idx) => (
+        <ListCard
+          key={idx}
+          title="Frontend engineer"
+          image={{
+            src: "/images/profile.JPG",
+            alt: "Github",
+            dimension: "60px",
+          }}
+        >
+          <Stack spacing={3}>
+            <Box>
+              <Text fontSize="sm" fontWeight={500}>
+                Kanda Software
+              </Text>
+              <Text fontSize="sm" fontWeight={300} opacity={0.8}>
+                <i>May 2022 - Present · 5 months</i>
+              </Text>
+              <HStack>
+                <ImLocation />
+
+                <Text fontSize="sm" fontWeight={400} opacity={0.8}>
+                  Newton, Massachusetts, United StatesNewton (Remote)
+                </Text>
+              </HStack>
+            </Box>
+
+            <Box>
+              <Heading as="h3" size="xs">
+                <u>Tasks and Achievements</u>
+              </Heading>
+              <UnorderedList>
+                <ListItem>
+                  Lorem ipsum dolor sit amet, Consectetur adipiscing elit ,
+                  Consectetur adipiscing elit , Consectetur adipiscing elit
+                </ListItem>
+                <ListItem>
+                  Lorem ipsum dolor sit amet, Consectetur adipiscing elit ,
+                  Consectetur adipiscing elit , Consectetur adipiscing elit
+                </ListItem>
+                <ListItem>
+                  Lorem ipsum dolor sit amet, Consectetur adipiscing elit ,
+                  Consectetur adipiscing elit , Consectetur adipiscing elit
+                </ListItem>
+                <ListItem>
+                  Lorem ipsum dolor sit amet, Consectetur adipiscing elit ,
+                  Consectetur adipiscing elit , Consectetur adipiscing elit
+                </ListItem>
+              </UnorderedList>
+            </Box>
+
+            <HStack flexWrap="wrap" divider={<VscDebugStackframeDot />}>
+              <Heading as="h3" size="xs" minW="99px">
+                <u>Skills Applied:</u>
+              </Heading>
+
+              {/* <HStack  flexWrap="wrap"> */}
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              <Text fontSize="xs">Web Development</Text>
+              {/* </HStack> */}
+            </HStack>
+
+            {/* Projects Images */}
+            <Grid
+              gridTemplateColumns="repeat(6, 150px)"
+              gridAutoRows="60px"
+              gap={3}
+            >
+              <Image
+                src="/images/profile.JPG"
+                alt="activity"
+                width={"100%"}
+                height="auto"
+                border="1px solid"
+                borderColor="brand.dark-6"
+                rounded="md"
+              />
+              <Image
+                src="/images/profile.JPG"
+                alt="activity"
+                width={"100%"}
+                height="auto"
+                border="1px solid"
+                borderColor="brand.dark-6"
+                rounded="md"
+              />
+              <Image
+                src="/images/profile.JPG"
+                alt="activity"
+                width={"100%"}
+                height="auto"
+                border="1px solid"
+                borderColor="brand.dark-6"
+                rounded="md"
+              />
+              <Image
+                src="/images/profile.JPG"
+                alt="activity"
+                width={"100%"}
+                height="auto"
+                border="1px solid"
+                borderColor="brand.dark-6"
+                rounded="md"
+              />
+              <Image
+                src="/images/profile.JPG"
+                alt="activity"
+                width={"100%"}
+                height="auto"
+                border="1px solid"
+                borderColor="brand.dark-6"
+                rounded="md"
+              />
+            </Grid>
+          </Stack>
+        </ListCard>
+      ))}
+    </Stack>
   </Section>
 );
 const EducationSection = () => (

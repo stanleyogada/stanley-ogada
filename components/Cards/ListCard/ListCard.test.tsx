@@ -10,7 +10,6 @@ describe("ListCard", () => {
     render(<ListCard {...props}>test content</ListCard>);
 
     screen.getByTestId("image: <src=/blog>, <alt=blog>");
-    screen.getByTestId("listCard: <dimension=30>");
     screen.getByRole("heading", { level: 2, name: /test title/i });
     screen.getByText(/test content/i);
   });

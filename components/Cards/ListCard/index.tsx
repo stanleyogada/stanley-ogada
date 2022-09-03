@@ -10,13 +10,20 @@ type Props = {
 
 const ListCard = ({ title, children, image }: Props) => {
   return (
-    <Flex alignItems={"flex-start"}>
-      <div data-testId={`listCard: <dimension=${image.dimension}>`}>
-        <Image src={image.src} alt={image.alt} width={30} height={30} />
+    <Flex alignItems={"flex-start"} gap={5} py={5}>
+      <div data-testid={`listCard: <dimension=${image.dimension}>`}>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.dimension}
+          height={image.dimension}
+        />
       </div>
 
       <Box>
-        <Heading>{title}</Heading>
+        <Heading size="md" mb={1}>
+          {title}
+        </Heading>
 
         {children}
       </Box>
