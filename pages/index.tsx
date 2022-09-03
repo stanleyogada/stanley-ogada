@@ -193,21 +193,37 @@ const OverviewSection = ({
     </Flex>
   </Section>
 );
-const ProjectsSection = () => (
-  <Section id="projects" heading="Projects">
-    {/* <Slider slidesToShow={3}>
-      {projectsData.map((product, idx) => (
-        <ProjectCard w="330px" mx={2} key={idx} {...product} />
-      ))}
-    </Slider> */}
+const ProjectsSection = () => {
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const handleSeeMore = () => setShowAll((prev) => !prev);
 
-    <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
-      {projectsData.map((product, idx) => (
-        <ProjectCard w="auto" key={idx} {...product} />
-      ))}
-    </Grid>
-  </Section>
-);
+  return (
+    <Section
+      id="projects"
+      heading="Projects"
+      seeMore={{
+        cb: handleSeeMore,
+        text: showAll
+          ? "See less projects"
+          : `See all ${projectsData.length} projects`,
+      }}
+    >
+      {showAll ? (
+        <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
+          {projectsData.map((product, idx) => (
+            <ProjectCard w="auto" key={idx} {...product} />
+          ))}
+        </Grid>
+      ) : (
+        <Slider slidesToShow={3} autoSlide>
+          {projectsData.map((product, idx) => (
+            <ProjectCard w="330px" mx={2} key={idx} {...product} />
+          ))}
+        </Slider>
+      )}
+    </Section>
+  );
+};
 const AboutSection = () => (
   <Section id="about" heading="About">
     <Text fontSize={"lg"}>
