@@ -17,6 +17,7 @@ import {
 import { createContext, useState } from "react";
 import { ImLocation } from "react-icons/im";
 import { FaHashtag } from "react-icons/fa";
+import { RiShareBoxFill } from "react-icons/ri";
 import Link from "@components/Link";
 import { AiTwotoneMail } from "react-icons/ai";
 import { VscDebugStackframeDot } from "react-icons/vsc";
@@ -402,46 +403,133 @@ const ExperienceSection = () => (
 );
 const EducationSection = () => (
   <Section id="education" heading="Education">
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur
-      labore debitis corporis, voluptates odio quis! Ex aliquam, aliquid quos et
-      doloremque eligendi! Sequi accusantium ex in labore voluptatem
-      necessitatibus quam dolores quibusdam aliquam eveniet quo placeat quia
-      dolorem neque nihil earum quis nostrum atque dignissimos reprehenderit,
-      explicabo ipsum aut repellat laudantium. Reprehenderit nesciunt, natus non
-      ea est numquam aut assumenda neque dolorem ducimus minima eligendi
-      voluptatem quo amet repudiandae ipsum eaque doloribus vero quisquam sed
-      quae vel soluta quaerat? Nisi optio deserunt saepe libero aspernatur
-      laudantium nostrum similique expedita, voluptatibus ex eligendi aliquid,
-      quis laboriosam vero. Quos officia repudiandae quibusdam necessitatibus
-      autem deleniti fugiat illum voluptatibus exercitationem quo eaque quam, at
-      maiores sit recusandae dignissimos. Voluptates, nam alias. Assumenda ipsa
-      neque sequi sunt fugit officiis voluptatibus commodi maiores excepturi
-      tenetur aspernatur placeat autem fugiat molestiae maxime iste inventore
-      vitae necessitatibus deserunt.
-    </Text>
+    <ListCard
+      title="Institut Universitaire LES COURS SONOU"
+      image={{
+        src: "/images/profile.JPG",
+        alt: "Institut Universitaire LES COURS SONOU",
+        dimension: "60px",
+      }}
+    >
+      <Stack spacing={3}>
+        <Box>
+          <Text fontSize="sm" fontWeight={500}>
+            Bachelor of Science - BS, Computer Science
+          </Text>
+          <Text fontSize="sm" fontWeight={300} opacity={0.8}>
+            <i>2014 - 2017</i>
+          </Text>
+          <HStack>
+            <ImLocation />
+
+            <Text fontSize="sm" fontWeight={400} opacity={0.8}>
+              Cotonou, Benin Republic
+            </Text>
+          </HStack>
+        </Box>
+
+        <Box>
+          <Text>
+            <b>Relevant Coursework: </b>
+            Mathematics, Physics, Data Structures & Algorithms, Boolean Algebra
+          </Text>
+        </Box>
+
+        {/* Projects Images */}
+        <Grid
+          gridTemplateColumns="repeat(6, 150px)"
+          gridAutoRows="60px"
+          gap={3}
+        >
+          <Image
+            src="/images/profile.JPG"
+            alt="activity"
+            width={"100%"}
+            height="auto"
+            border="1px solid"
+            borderColor="brand.dark-6"
+            rounded="md"
+          />
+          <Image
+            src="/images/profile.JPG"
+            alt="activity"
+            width={"100%"}
+            height="auto"
+            border="1px solid"
+            borderColor="brand.dark-6"
+            rounded="md"
+          />
+          <Image
+            src="/images/profile.JPG"
+            alt="activity"
+            width={"100%"}
+            height="auto"
+            border="1px solid"
+            borderColor="brand.dark-6"
+            rounded="md"
+          />
+          <Image
+            src="/images/profile.JPG"
+            alt="activity"
+            width={"100%"}
+            height="auto"
+            border="1px solid"
+            borderColor="brand.dark-6"
+            rounded="md"
+          />
+          <Image
+            src="/images/profile.JPG"
+            alt="activity"
+            width={"100%"}
+            height="auto"
+            border="1px solid"
+            borderColor="brand.dark-6"
+            rounded="md"
+          />
+        </Grid>
+      </Stack>
+    </ListCard>
   </Section>
 );
 const LicensesCertificatesSection = () => (
   <Section id="licenses-certificates" heading="Licenses and Certificates">
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur
-      labore debitis corporis, voluptates odio quis! Ex aliquam, aliquid quos et
-      doloremque eligendi! Sequi accusantium ex in labore voluptatem
-      necessitatibus quam dolores quibusdam aliquam eveniet quo placeat quia
-      dolorem neque nihil earum quis nostrum atque dignissimos reprehenderit,
-      explicabo ipsum aut repellat laudantium. Reprehenderit nesciunt, natus non
-      ea est numquam aut assumenda neque dolorem ducimus minima eligendi
-      voluptatem quo amet repudiandae ipsum eaque doloribus vero quisquam sed
-      quae vel soluta quaerat? Nisi optio deserunt saepe libero aspernatur
-      laudantium nostrum similique expedita, voluptatibus ex eligendi aliquid,
-      quis laboriosam vero. Quos officia repudiandae quibusdam necessitatibus
-      autem deleniti fugiat illum voluptatibus exercitationem quo eaque quam, at
-      maiores sit recusandae dignissimos. Voluptates, nam alias. Assumenda ipsa
-      neque sequi sunt fugit officiis voluptatibus commodi maiores excepturi
-      tenetur aspernatur placeat autem fugiat molestiae maxime iste inventore
-      vitae necessitatibus deserunt.
-    </Text>
+    <Stack divider={<StackDivider borderColor="brand.dark-6" />}>
+      {[0, 0, 0, 0, 0, 0, 0, 0].map((_, idx) => (
+        <ListCard
+          key={idx}
+          title="JavaScript (Basic) Certificate"
+          image={{
+            src: "/images/profile.JPG",
+            alt: "JavaScript (Basic) Certificate",
+            dimension: "60px",
+          }}
+        >
+          <Stack spacing={3}>
+            <Box>
+              <Text fontSize="sm" fontWeight={500}>
+                HackerRank
+              </Text>
+              <Text fontSize="sm" fontWeight={300} opacity={0.8}>
+                <i>Issued Feb 2022 · No Expiration Date</i>
+              </Text>
+            </Box>
+
+            <Text>Credential ID c801699966c8</Text>
+
+            <Box>
+              <Button
+                rounded={"full"}
+                leftIcon={<RiShareBoxFill />}
+                variant="outline"
+                color="brand.primary"
+              >
+                Show Credentails
+              </Button>
+            </Box>
+          </Stack>
+        </ListCard>
+      ))}
+    </Stack>
   </Section>
 );
 
