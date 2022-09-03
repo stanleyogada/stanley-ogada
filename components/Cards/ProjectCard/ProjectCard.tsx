@@ -21,6 +21,7 @@ export interface ProjectCardProps extends ProjectCardOptionsProps {
   description: string;
   imageSrc: string;
   w?: string;
+  [x: string]: any;
 }
 
 const ProjectCard = ({
@@ -30,6 +31,7 @@ const ProjectCard = ({
   githubLink,
   websiteLink,
   w = "300px",
+  ...rest
 }: ProjectCardProps) => {
   return (
     <Box
@@ -39,6 +41,7 @@ const ProjectCard = ({
       rounded="md"
       bg="brand.light-3"
       width={w}
+      {...rest}
     >
       <Text p={3} fontSize="sm" fontWeight={500}>
         Project

@@ -29,6 +29,9 @@ import type { ProjectCardProps } from "@components/Cards/ProjectCard/ProjectCard
 import Image from "@components/Image";
 
 // @ts-ignore
+import { Slider } from "react-rapid-carousel";
+
+// @ts-ignore
 export const HomeContext = createContext();
 
 const Home: NextPage = () => {
@@ -192,6 +195,12 @@ const OverviewSection = ({
 );
 const ProjectsSection = () => (
   <Section id="projects" heading="Projects">
+    <Slider slidesToShow={3}>
+      {projectsData.map((product, idx) => (
+        <ProjectCard w="330px" mx={2} key={idx} {...product} />
+      ))}
+    </Slider>
+
     <Grid gridTemplateColumns={"1fr 1fr 1fr"} gap={10}>
       {projectsData.map((product, idx) => (
         <ProjectCard w="auto" key={idx} {...product} />
