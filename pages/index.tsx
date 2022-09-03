@@ -30,6 +30,7 @@ import Image from "@components/Image";
 
 // @ts-ignore
 import { Slider } from "react-rapid-carousel";
+import ListCard from "@components/Cards/ListCard";
 
 // @ts-ignore
 export const HomeContext = createContext();
@@ -264,24 +265,19 @@ const SkillsSection = () => (
 );
 const ExperienceSection = () => (
   <Section id="experience" heading="Experience">
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur
-      labore debitis corporis, voluptates odio quis! Ex aliquam, aliquid quos et
-      doloremque eligendi! Sequi accusantium ex in labore voluptatem
-      necessitatibus quam dolores quibusdam aliquam eveniet quo placeat quia
-      dolorem neque nihil earum quis nostrum atque dignissimos reprehenderit,
-      explicabo ipsum aut repellat laudantium. Reprehenderit nesciunt, natus non
-      ea est numquam aut assumenda neque dolorem ducimus minima eligendi
-      voluptatem quo amet repudiandae ipsum eaque doloribus vero quisquam sed
-      quae vel soluta quaerat? Nisi optio deserunt saepe libero aspernatur
-      laudantium nostrum similique expedita, voluptatibus ex eligendi aliquid,
-      quis laboriosam vero. Quos officia repudiandae quibusdam necessitatibus
-      autem deleniti fugiat illum voluptatibus exercitationem quo eaque quam, at
-      maiores sit recusandae dignissimos. Voluptates, nam alias. Assumenda ipsa
-      neque sequi sunt fugit officiis voluptatibus commodi maiores excepturi
-      tenetur aspernatur placeat autem fugiat molestiae maxime iste inventore
-      vitae necessitatibus deserunt.
-    </Text>
+    <ListCard
+      title="Github Copilot"
+      image={{
+        src: "/images/profile.JPG",
+        alt: "Github",
+        dimension: "50px",
+      }}
+    >
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, est
+      illo, corrupti pariatur1 quisquam tenetur culpa temporibus odio vel
+      adipisci eveniet consectetur. Eaque animi iusto laudantium aspernatur
+      reprehenderit, excepturi qui.
+    </ListCard>
   </Section>
 );
 const EducationSection = () => (
